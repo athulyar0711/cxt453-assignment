@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Community & Reader Lounge | CurioComics</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💬</text></svg>">
+</head>
+<body class="halftone-bg">
+
+  <!-- =========================================================================
+       Navigation Bar (Connected Across All 5 Pages)
+       ========================================================================= -->
+  <header class="site-header">
+    <div class="container">
+      <div class="nav-inner">
+        <a href="index.html" class="brand-wrapper" onclick="ComicSFX.playPop()">
+          <span class="brand-logo-badge">KAPOW!</span>
+          <div class="brand-text-group">
+            <span class="brand-name">
+              CurioComics
+              <span class="sdg-badge-mini">SDG 4</span>
+            </span>
+            <span class="brand-subtitle">Illustrated Stories That Spark Minds</span>
+          </div>
+        </a>
+
+        <!-- 5 Connected Links -->
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="comics.html" class="nav-link">All Comics</a></li>
+          <li><a href="reader.html?id=quantum-enigma" class="nav-link">Read Featured</a></li>
+          <li><a href="community.html" class="nav-link active">Community</a></li>
+          <li><a href="about.html" class="nav-link">About & FAQ</a></li>
+        </ul>
+
+        <div class="nav-actions">
+          <button id="sfx-toggle" class="btn-icon" title="Toggle Sound FX">🔊</button>
+          <button id="theme-toggle" class="btn-icon" title="Toggle Theme">☀️</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- =========================================================================
+       Community Lounge Content
+       ========================================================================= -->
+  <main class="container" style="padding-top: 3.5rem;">
+    <div class="section-header">
+      <div class="section-title-wrap">
+        <h2>💬 Reader Lounge & Community</h2>
+        <p class="section-desc">Share thoughts, debate scientific mysteries, vote on upcoming episodes, and connect with fellow readers.</p>
+      </div>
+    </div>
+
+    <div class="community-grid">
+      <!-- Left Column: Discussions -->
+      <div>
+        <!-- Create Post Card -->
+        <div class="community-post-card" style="border-color: var(--comic-cyan);">
+          <h3 style="font-size:1.3rem; color:var(--comic-yellow); margin-bottom:0.75rem;">Start a Discussion</h3>
+          <div style="display:flex; flex-direction:column; gap:0.75rem;">
+            <input type="text" id="post-title" class="search-input" placeholder="Topic title (e.g., Which sorting algorithm did you like best?)" style="padding-left:1rem;">
+            <textarea id="post-content" class="comment-textarea" placeholder="Write your thought, question, or theory here..."></textarea>
+            <div style="text-align:right;">
+              <button class="btn-comic-secondary" id="create-post-btn" style="font-size:0.9rem;">
+                <span>Publish Topic 🚀</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Topic Feed -->
+        <div id="community-feed">
+          <article class="community-post-card">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.5rem;">
+              <div style="display:flex; align-items:center; gap:0.5rem;">
+                <div class="comment-avatar">M</div>
+                <strong style="color:var(--text-main);">Maya R.</strong>
+                <span class="category-pill" style="background:#0284c7;">Physics & STEM</span>
+              </div>
+              <span style="font-size:0.75rem; color:var(--text-muted);">2 hours ago</span>
+            </div>
+            <h4 style="font-size:1.25rem; color:var(--comic-cyan); margin-bottom:0.4rem;">The Double-Slit observer effect blew my mind</h4>
+            <p style="font-size:0.92rem; color:var(--text-muted); line-height:1.6;">
+              I always found physics textbooks so dry when talking about wave-particle duality. Seeing Dr. Maya and Planck shrink down to subatomic scale made it so much clearer! Does anyone else think quantum computing is going to change everyday encryption?
+            </p>
+            <div style="margin-top:1rem; display:flex; gap:1.25rem; font-size:0.85rem; color:var(--text-muted);">
+              <span>❤️ 24 Likes</span>
+              <span>💬 9 Replies</span>
+              <a href="reader.html?id=quantum-enigma" style="color:var(--comic-yellow); margin-left:auto; font-weight:700;">Read This Story →</a>
+            </div>
+          </article>
+
+          <article class="community-post-card">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.5rem;">
+              <div style="display:flex; align-items:center; gap:0.5rem;">
+                <div class="comment-avatar" style="background:#10b981;">K</div>
+                <strong style="color:var(--text-main);">Karan P.</strong>
+                <span class="category-pill" style="background:#059669;">Marine Ecology</span>
+              </div>
+              <span style="font-size:0.75rem; color:var(--text-muted);">Yesterday</span>
+            </div>
+            <h4 style="font-size:1.25rem; color:var(--comic-cyan); margin-bottom:0.4rem;">Coral micro-fragmentation is real!</h4>
+            <p style="font-size:0.92rem; color:var(--text-muted); line-height:1.6;">
+              After reading <em>The Whispering Reef</em>, I did some research on Dr. David Vaughan’s work with coral micro-fragmentation. It really grows 40x faster! Super cool to see modern environmental science inside a comic strip.
+            </p>
+            <div style="margin-top:1rem; display:flex; gap:1.25rem; font-size:0.85rem; color:var(--text-muted);">
+              <span>❤️ 19 Likes</span>
+              <span>💬 5 Replies</span>
+              <a href="reader.html?id=eco-guardians" style="color:var(--comic-yellow); margin-left:auto; font-weight:700;">Read This Story →</a>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <!-- Right Column: Community Poll & Creator Corner -->
+      <div>
+        <!-- Reader Poll -->
+        <div class="community-post-card" style="border-color: var(--comic-yellow);">
+          <span class="sdg-badge-mini" style="margin-bottom:0.4rem; display:inline-block;">READER VOTE</span>
+          <h3 style="font-size:1.35rem; color:var(--comic-yellow); margin-bottom:0.35rem;">Next Story Topic</h3>
+          <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:1.25rem;">
+            Which science or history topic should our creators tackle in next month's episode?
+          </p>
+
+          <div id="poll-container">
+            <div class="poll-option-bar" onclick="votePoll(0)">
+              <span>🚀 Black Holes & Gravitational Waves</span>
+              <strong id="poll-pct-0">44%</strong>
+            </div>
+            <div class="poll-option-bar" onclick="votePoll(1)">
+              <span>🧠 The Human Brain & Neural Synapses</span>
+              <strong id="poll-pct-1">28%</strong>
+            </div>
+            <div class="poll-option-bar" onclick="votePoll(2)">
+              <span>☀️ Next-Gen Solar & Renewable Energy</span>
+              <strong id="poll-pct-2">16%</strong>
+            </div>
+            <div class="poll-option-bar" onclick="votePoll(3)">
+              <span>🤖 Artificial Intelligence & Logic Gates</span>
+              <strong id="poll-pct-3">12%</strong>
+            </div>
+          </div>
+          <div id="poll-thankyou" style="display:none; text-align:center; color:#34d399; font-weight:700; margin-top:0.75rem; font-size:0.9rem;">
+            ✅ Thanks for voting! Your voice helps shape the publication.
+          </div>
+        </div>
+
+        <!-- Creator Submission Corner -->
+        <div class="community-post-card">
+          <h3 style="font-size:1.3rem; color:var(--comic-cyan); margin-bottom:0.5rem;">Have a Story Idea?</h3>
+          <p style="font-size:0.88rem; color:var(--text-muted); line-height:1.5; margin-bottom:1rem;">
+            Are you a student, science teacher, or digital artist? We welcome community story pitches, script ideas, and educational questions!
+          </p>
+          <a href="about.html#contact" class="btn-comic-secondary" style="width:100%; justify-content:center; font-size:0.88rem;">
+            <span>Get in Touch with the Editors →</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3>⚡ CurioComics Lounge</h3>
+          <p class="footer-text">
+            Connecting curious minds, educators, and storytellers worldwide.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Navigate</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="comics.html">All Comics</a></li>
+            <li><a href="reader.html?id=quantum-enigma">Interactive Reader</a></li>
+            <li><a href="community.html">Community Lounge</a></li>
+            <li><a href="about.html">About & FAQ</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Mission</h4>
+          <ul class="footer-links">
+            <li><a href="about.html#mission">Promoting SDG 4 (Quality Education)</a></li>
+            <li><a href="about.html#faq">Educational Use for Classrooms</a></li>
+            <li><a href="comics.html">Free Open Access Library</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>© 2026-27 CurioComics • Community discussions are moderated for respectful, supportive learning.</div>
+        <div style="color:var(--comic-yellow);">Inclusive Learning for All</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+  <script>
+    // Simple interactive post and poll logic
+    document.getElementById("create-post-btn")?.addEventListener("click", () => {
+      const title = document.getElementById("post-title")?.value.trim();
+      const content = document.getElementById("post-content")?.value.trim();
+      if (!title || !content) {
+        alert("Please enter both a topic title and your thought!");
+        return;
+      }
+      ComicSFX.playChime();
+      const feed = document.getElementById("community-feed");
+      const newCard = document.createElement("article");
+      newCard.className = "community-post-card";
+      newCard.style.borderLeft = "4px solid var(--comic-yellow)";
+      newCard.innerHTML = `
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.5rem;">
+          <div style="display:flex; align-items:center; gap:0.5rem;">
+            <div class="comment-avatar" style="background:var(--comic-yellow);">Y</div>
+            <strong style="color:var(--text-main);">You</strong>
+            <span class="category-pill" style="background:#8b5cf6;">Reader Reflection</span>
+          </div>
+          <span style="font-size:0.75rem; color:var(--text-muted);">Just now</span>
+        </div>
+        <h4 style="font-size:1.25rem; color:var(--comic-yellow); margin-bottom:0.4rem;">${title}</h4>
+        <p style="font-size:0.92rem; color:var(--text-muted); line-height:1.6;">${content}</p>
+        <div style="margin-top:1rem; font-size:0.85rem; color:var(--text-muted);">
+          <span>❤️ 1 Like</span> • <span>💬 0 Replies</span>
+        </div>
+      `;
+      feed.prepend(newCard);
+      document.getElementById("post-title").value = "";
+      document.getElementById("post-content").value = "";
+    });
+
+    function votePoll(idx) {
+      ComicSFX.playPop();
+      document.getElementById("poll-thankyou").style.display = "block";
+    }
+  </script>
+</body>
+</html>

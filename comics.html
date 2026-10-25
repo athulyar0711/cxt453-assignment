@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>All Comics & Series | CurioComics Library</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📚</text></svg>">
+</head>
+<body class="halftone-bg">
+
+  <!-- =========================================================================
+       Navigation Bar (Connected Across All 5 Pages)
+       ========================================================================= -->
+  <header class="site-header">
+    <div class="container">
+      <div class="nav-inner">
+        <a href="index.html" class="brand-wrapper" onclick="ComicSFX.playPop()">
+          <span class="brand-logo-badge">KAPOW!</span>
+          <div class="brand-text-group">
+            <span class="brand-name">
+              CurioComics
+              <span class="sdg-badge-mini">SDG 4</span>
+            </span>
+            <span class="brand-subtitle">Illustrated Stories That Spark Minds</span>
+          </div>
+        </a>
+
+        <!-- 5 Connected Pages Links -->
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="comics.html" class="nav-link active">All Comics</a></li>
+          <li><a href="reader.html?id=quantum-enigma" class="nav-link">Read Featured</a></li>
+          <li><a href="community.html" class="nav-link">Community</a></li>
+          <li><a href="about.html" class="nav-link">About & FAQ</a></li>
+        </ul>
+
+        <div class="nav-actions">
+          <button id="sfx-toggle" class="btn-icon" title="Toggle Sound FX">🔊</button>
+          <button id="theme-toggle" class="btn-icon" title="Toggle Theme">☀️</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- =========================================================================
+       Library Header & Search
+       ========================================================================= -->
+  <main class="catalog-section" style="padding-top: 3.5rem;">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-title-wrap">
+          <h2>📚 The Comic Library</h2>
+          <p class="section-desc">Browse our curated graphic stories across science, environment, computing, and world history.</p>
+        </div>
+
+        <div class="search-wrapper">
+          <span class="search-icon">🔍</span>
+          <input type="text" id="search-input" class="search-input" placeholder="Search by topic, character, or title...">
+        </div>
+      </div>
+
+      <!-- Category Filter Chips -->
+      <div class="filter-bar" style="margin-bottom: 2.5rem;">
+        <button class="filter-chip active" data-filter="all">🌟 All Categories</button>
+        <button class="filter-chip" data-filter="Physics & STEM">⚛️ Physics & STEM</button>
+        <button class="filter-chip" data-filter="Environmental Science">🌊 Nature & Ecology</button>
+        <button class="filter-chip" data-filter="Computer Science">💻 Algorithms & Code</button>
+        <button class="filter-chip" data-filter="History & Culture">🏛️ History & Culture</button>
+      </div>
+
+      <!-- Comic Grid -->
+      <div class="comic-grid" id="comic-catalog-grid">
+        <!-- Rendered via js/app.js -->
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3>⚡ CurioComics Library</h3>
+          <p class="footer-text">
+            Every comic is designed to be engaging, educational, and fun. Read panel by panel or in continuous scroll mode.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Pages</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="comics.html">All Comics</a></li>
+            <li><a href="reader.html?id=quantum-enigma">Interactive Reader</a></li>
+            <li><a href="community.html">Community & Discussions</a></li>
+            <li><a href="about.html">About & FAQ</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Need Help?</h4>
+          <ul class="footer-links">
+            <li><a href="about.html#faq">Frequently Asked Questions</a></li>
+            <li><a href="community.html#suggestions">Suggest a Topic</a></li>
+            <li><a href="about.html#mission">Our SDG 4 Commitment</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>© 2026-27 CurioComics • Free educational comics for everyone.</div>
+        <div style="color:var(--comic-yellow);">Supporting SDG 4: Quality Education</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

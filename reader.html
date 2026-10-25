@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CurioComics Reader | Interactive Graphic Story</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📖</text></svg>">
+</head>
+<body class="halftone-bg">
+
+  <!-- =========================================================================
+       Reader Top Sticky Toolbar
+       ========================================================================= -->
+  <header class="reader-header">
+    <div class="reader-left-nav">
+      <a href="comics.html" class="btn-comic-secondary" style="padding:0.4rem 0.8rem; font-size:0.85rem;" title="Back to All Comics" onclick="ComicSFX.playPop()">
+        <span>⬅️ Library</span>
+      </a>
+      <div>
+        <h1 class="reader-comic-title" id="reader-title">The Quantum Enigma</h1>
+        <div style="font-size:0.75rem; color:var(--text-muted);" id="reader-issue">Vol. 1 • Issue #01</div>
+      </div>
+    </div>
+
+    <!-- Quick Navigation Links (Home, Comics, Community, About) -->
+    <ul class="nav-links" style="margin-left:auto; margin-right:1rem;">
+      <li><a href="index.html" class="nav-link">Home</a></li>
+      <li><a href="comics.html" class="nav-link">Comics</a></li>
+      <li><a href="community.html" class="nav-link">Community</a></li>
+      <li><a href="about.html" class="nav-link">About</a></li>
+    </ul>
+
+    <!-- Controls (Mode, Audio, Sound, Theme) -->
+    <div class="reader-right-controls">
+      <div class="reader-mode-switch">
+        <button id="mode-slide-btn" class="mode-btn active" title="Panel-by-Panel Slide Mode">
+          <span>🖼️ Slide</span>
+        </button>
+        <button id="mode-webtoon-btn" class="mode-btn" title="Continuous Webtoon Scroll Mode">
+          <span>📜 Scroll</span>
+        </button>
+      </div>
+
+      <button id="tts-toggle-btn" class="btn-comic-secondary" style="padding:0.45rem 0.85rem; font-size:0.85rem;" title="Listen to narrative audio">
+        <span>🎙️ Listen</span>
+      </button>
+
+      <button id="sfx-toggle" class="btn-icon" title="Toggle Sound FX">🔊</button>
+      <button id="theme-toggle" class="btn-icon" title="Toggle Theme">☀️</button>
+    </div>
+  </header>
+
+  <!-- =========================================================================
+       Main Reading Canvas
+       ========================================================================= -->
+  <main class="reader-stage">
+
+    <!-- Mode 1: Panel-by-Panel Slide Mode -->
+    <div id="slide-view-container">
+      <div class="panel-slide-container">
+        <!-- SVG Art Frame -->
+        <div class="panel-art-frame" id="slide-art-frame">
+          <!-- Populated by js/reader.js -->
+        </div>
+
+        <!-- Dialogue & Narrative Box -->
+        <div class="panel-dialogue-box">
+          <div class="panel-header-row">
+            <span class="panel-number-badge" id="slide-panel-num">Panel 1 of 6</span>
+            <span class="panel-sfx-text" id="slide-panel-sfx">BZZT! CLICK!</span>
+          </div>
+
+          <div class="panel-narrative" id="slide-narrative">
+            <!-- Narrative description -->
+          </div>
+
+          <div class="speech-bubbles-grid" id="slide-bubbles-grid">
+            <!-- Speech bubbles -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Navigation Bar -->
+      <div class="reader-nav-bar">
+        <button id="prev-panel-btn" class="btn-comic-secondary" style="font-size:0.95rem;">
+          <span>⏪ Previous</span>
+        </button>
+
+        <div class="reader-progress-dots" id="panel-dots">
+          <!-- Interactive dots -->
+        </div>
+
+        <button id="next-panel-btn" class="btn-comic" style="font-size:1.05rem; padding:0.6rem 1.4rem;">
+          <span>Next Panel ⏩</span>
+        </button>
+      </div>
+
+      <div style="text-align:center; margin-top:0.75rem; font-size:0.8rem; color:var(--text-muted);">
+        💡 <em>Tip: You can also use <strong>Left / Right Arrow Keys</strong> on your keyboard to turn panels</em>
+      </div>
+    </div>
+
+    <!-- Mode 2: Continuous Webtoon Scroll Mode -->
+    <div id="webtoon-container" class="webtoon-scroll-container">
+      <!-- Populated dynamically by js/reader.js -->
+    </div>
+
+    <!-- =======================================================================
+         Comprehension & Fun Fact Check
+         ======================================================================= -->
+    <section class="quiz-section" id="quiz-section">
+      <div class="quiz-header">
+        <span class="sdg-badge-mini" style="font-size:0.75rem; padding:0.25rem 0.6rem;">QUICK KNOWLEDGE CHECK</span>
+        <h2 class="quiz-title">🎯 Test Your Understanding!</h2>
+        <p class="quiz-subtitle">See what you picked up from this story! Click an option to see instant scientific explanations.</p>
+      </div>
+
+      <div id="quiz-questions-wrap">
+        <!-- Rendered via js/reader.js -->
+      </div>
+
+      <div class="quiz-score-summary" id="quiz-summary-box">
+        <div class="quiz-score-badge" id="quiz-score-badge">🎯 3 / 3 Correct</div>
+        <p id="quiz-score-msg" style="font-size:1.1rem; color:var(--text-main); margin-top:0.5rem;"></p>
+        <div style="margin-top:1.5rem; display:flex; justify-content:center; gap:1rem; flex-wrap:wrap;">
+          <a href="comics.html" class="btn-comic" onclick="ComicSFX.playPop()">
+            <span>📚 Choose Another Comic</span>
+          </a>
+          <a href="community.html" class="btn-comic-secondary" onclick="ComicSFX.playPop()">
+            <span>💬 Discuss in Community</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         Reader Discussion & Thoughts
+         ======================================================================= -->
+    <section class="comments-section">
+      <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:1.5rem;">
+        <h3 style="font-size:1.5rem; color:var(--text-main); display:flex; align-items:center; gap:0.5rem;">
+          <span>💬 Reader Thoughts & Discussions</span>
+        </h3>
+        <span style="font-size:0.82rem; color:var(--comic-cyan);">Join the conversation</span>
+      </div>
+
+      <div class="comment-input-area">
+        <textarea id="new-comment-input" class="comment-textarea" placeholder="What did you think of Dr. Maya's adventure? Share your thoughts or questions..."></textarea>
+        <div style="text-align:right;">
+          <button id="submit-comment-btn" class="btn-comic-secondary" style="font-size:0.9rem;">
+            <span>Post Comment 🚀</span>
+          </button>
+        </div>
+      </div>
+
+      <div id="comments-list">
+        <!-- Comments rendered via js/reader.js -->
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =========================================================================
+       Hotspot Educational Modal
+       ========================================================================= -->
+  <div class="hotspot-modal" id="hotspot-modal" role="dialog" aria-modal="true">
+    <div class="hotspot-card">
+      <button class="btn-close-modal" id="close-hotspot-btn" title="Close modal">✕</button>
+      <div class="hotspot-header">
+        <span class="hotspot-badge">LEARN MORE</span>
+        <h3 class="hotspot-title" id="hotspot-title">Science Behind the Scene</h3>
+      </div>
+      <div class="hotspot-body" id="hotspot-body">
+        <!-- Populated dynamically -->
+      </div>
+      <div style="text-align:right;">
+        <button class="btn-comic-secondary" onclick="ComicReader.closeHotspot()" style="font-size:0.85rem;">
+          Continue Reading 🚀
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer" style="margin-top:4rem;">
+    <div class="container" style="text-align:center;">
+      <p style="font-size:0.9rem; color:var(--text-muted); margin-bottom:0.75rem;">
+        CurioComics Reader • Free visual stories promoting curiosity and Quality Education (SDG 4).
+      </p>
+      <div style="display:flex; justify-content:center; gap:1.25rem;">
+        <a href="index.html" style="color:var(--text-muted); font-size:0.85rem;">Home</a>
+        <a href="comics.html" style="color:var(--text-muted); font-size:0.85rem;">All Comics</a>
+        <a href="community.html" style="color:var(--text-muted); font-size:0.85rem;">Community</a>
+        <a href="about.html" style="color:var(--comic-yellow); font-size:0.85rem;">About & FAQ</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/reader.js"></script>
+</body>
+</html>
